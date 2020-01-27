@@ -1,0 +1,183 @@
+
+
+<html>
+<head>
+	<title>
+		 Student Register
+	</title>
+	<style type="text/css">
+		#topnav {
+  overflow: hidden;
+  background-color: #333;
+  position: fixed;
+  width: 100%;
+}
+#topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+#topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+	
+		table{
+			margin-top: 30px;
+			background: transparent;
+			font-size: 20;
+			text-align: auto;
+			border-width: 4;
+			border-style: solid black;
+			border-color: black;
+			border-radius: 13px;
+		}
+		#register{
+			background: #F9E79F;
+			border-radius: 5px;
+			height: 30px;
+			width: 110px;
+			font-weight: bold;
+		}
+		#register:hover{
+			background-color: #DC7633;
+			font-weight: bold;  
+		}
+		body{
+			background-image: url("event.jpg");
+			background-size: auto;
+			background-repeat: no-repeat;
+		}
+		input{
+			border-radius: 4px;
+		}
+		abbr[title] {
+  border-bottom: none !important;
+  cursor: inherit !important;
+  text-decoration: none !important;
+}
+		#reset{
+			background: #F9E79F;
+			border-radius: 5px;
+			height: 30px;
+			width: 110px;
+			font-weight: bold;
+		}
+		#reset:hover{
+			background-color: #DC7633;
+			font-weight: bold;  
+		}
+	</style>
+</head>
+<body>
+<script>
+	function validateform(){
+		var fname=document.forms["student"]["firstname"].value;
+		var lname=document.forms["student"]["lastname"].value;
+		var pwrd=document.forms["student"]["password"].value;
+		var cnfpwrd=document.forms["student"]["cnfpassword"].value;
+		//var mail=document.forms["student"]["email"].value;
+		var valpas=/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[#$@!%&*?])[A-Za-z\d#$@!%&*?]{7,}$/;
+		if(fname == null || fname== "")
+		{
+			alert("firstname field can't be empty");
+			return false;	
+		}
+		if(lname == null || lname== "")
+		{
+			alert("lastname field can't be empty");
+			return false;	
+		}
+		else if(!valpas.test(pwrd))
+		{
+			alert("The password should have atleast 1 uppercase 1 lowercase 1 number 1 special chararter");
+			return false;
+		}
+		else if(pwrd!=cnfpwrd)
+		{
+				alert("Password did not match");
+				return false;	
+		}
+	}
+	
+</script>
+<div id="topnav">
+  <a id="active" href="index.html">Home</a>
+  <a href="aboutus.html">About Us</a>
+  <a href="student login.html">Student Login</a>
+  <a href="student register.html">Student Signup</a>
+  <a href="faculty login.html">Faculty Login</a>
+  <a href="faculty register.html">Faculty Signup</a>
+</div>
+<br>  
+
+<div id="s-div">
+<form name="student" method="post" action="studentregister">
+<table  cellspacing=5 align="center">
+	<caption><h2>Student Registration Form</h2></caption>
+<tr>
+<td>
+First Name: </td><td><input type="text"
+        name="firstname"
+        placeholder="Enter your firstname"
+        id="firstname"
+        required 
+         style="height: 25px; width: 200px;" size="20"
+         >
+</td>
+</tr>
+<tr>
+<td>Last Name:</td><td> <input type="text"
+        name="lastname"
+        placeholder="Enter your lastname"
+        id="lastname"
+        required="required" 
+        style="height: 25px; width: 200px;" size="20"></td>
+</tr>
+<tr>
+	<td><abbr title="Enter your nirmauni id">Email-id:</abbr></td><td> <input style="height: 25px; width: 200px;" placeholder="Enter your college email-id" type="email" id="email"
+       pattern=".+@nirmauni.ac.in" size="30" required name="email">
+</td>
+</tr>
+<tr>
+<td>
+<abbr title="Password should contain 1 uppercase 1 lowercase 1 number and 1 special chararter">Password: </abbr></td><td> <input type="password" name="password" value="" 
+ style="height: 25px; width: 200px;" size="20" required></td></tr>
+<tr>
+<td>
+Confirm Password: </td><td> <input type="password" name="cnfpassword" value="" 
+style="height: 25px; width: 200px;" size="20" required></td></tr>
+
+<tr>
+<td>
+Gender:</td><td>
+Male<input type="radio" name="gender" value="male" style="height: 15px; width: 15px;">
+&nbsp;Female<input type="radio" name="gender" value="female" style="height: 15px; width: 15px;">
+</td>
+</tr>
+<tr>
+<td>
+Select Branch:</td><td>
+<select name="branch">
+<option value="CSE">CE</option>
+<option value="EC">EC</option>
+<option value="IT">IT</option>
+<option value="IC">IC</option>
+<option value="CHE">CHE</option>
+<option value="CI">CL</option>
+<option value="EE">EE</option>
+<option value="ME">ME</option>
+</select></td></tr> 
+
+<tr><td>
+<button id="register"  name="Register" onclick="return validateform()">Register</button></td><td>
+<input  id="reset" type="reset" name="reset" value="Reset">
+</td></tr></table>
+
+</form>
+</div>
+</body>
+</html>

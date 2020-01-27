@@ -1,0 +1,184 @@
+
+<html>
+<head>
+	<title>
+		 Faculty Register
+	</title>
+	<style type="text/css">
+		#topnav {
+  overflow: hidden;
+  background-color: #333;
+  position: fixed;
+  width: 100%;
+}
+#topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+#topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+	
+		table{
+			margin-top: 30px;
+			background: transparent;
+			font-size: 20;
+			text-align: auto;
+			border-width: 4;
+			border-style: solid black;
+			border-color: black;
+			border-radius: 13px;
+		}
+		#register{
+			background: #F9E79F;
+			border-radius: 5px;
+			height: 30px;
+			width: 110px;
+			font-weight: bold;
+		}
+		#register:hover{
+			background-color: #DC7633;
+			font-weight: bold;  
+		}
+		body{
+			background-image: url("event.jpg");
+			background-size: auto;
+			background-repeat: no-repeat;
+		}
+		input{
+			border-radius: 4px;
+		}
+		abbr[title] {
+  border-bottom: none !important;
+  cursor: inherit !important;
+  text-decoration: none !important;
+}
+		#reset{
+			background: #F9E79F;
+			border-radius: 5px;
+			height: 30px;
+			width: 110px;
+			font-weight: bold;
+		}
+		#reset:hover{
+			background-color: #DC7633;
+			font-weight: bold;  
+		}
+	</style>
+</head>
+<body>
+<div id="topnav">
+  <a id="active" href="index.html">Home</a>
+  <a href="aboutus.html">About Us</a>
+  <a href="student login.html">Student Login</a>
+  <a href="student register.html">Student Signup</a>
+  <a href="faculty login.html">Faculty Login</a>
+  <a href="faculty register.html">Faculty Signup</a>
+</div>
+<br>  
+
+<script>
+	
+	function fvalidateform(){
+		var ffname=document.forms["faculty"]["ffirstname"].value;
+		var flname=document.forms["faculty"]["flastname"].value;
+		var fpwrd=document.forms["faculty"]["fpassword"].value;
+		var fcnfpwrd=document.forms["faculty"]["fcnfpassword"].value;
+		//var mail=document.forms["input"]["email"].value;
+		var fvalpas=/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[#$@!%&*?])[A-Za-z\d#$@!%&*?]{7,}$/;
+		var fvalmail="";
+		if(ffname == null || ffname== "")
+		{
+			alert("firstname field can't be empty");
+			return false;	
+		}
+		if(flname == null || flname== "")
+		{
+			alert("lastname field can't be empty");
+			return false;	
+		}
+		else if(!fvalpas.test(fpwrd))
+		{
+			alert("The password should have atleast 1 uppercase 1 lowercase 1 number 1 special chararter");
+			return false;
+		}
+		else if(fpwrd!=fcnfpwrd)
+		{
+				alert("Password did not match");
+				return false;	
+		}
+	}
+	
+</script>
+<table align="center" >
+	<tr><td>
+
+</table>
+<div id="f-div">
+<form name="faculty" method="post" action="facultyregister">
+<table  cellspacing=5 align="center">
+	<caption><h2> Faculty Registration Form</h2></caption>
+<tr>
+<td>
+Faculty First Name: </td><td><input type="text"
+        name="ffirstname"
+        placeholder="Enter your firstname"
+        id="firstname"
+        required 
+         style="height: 25px; width: 200px;" size="20"
+        >
+</td>
+</tr>
+<tr>
+<td>Faculty Last Name:</td><td> <input type="text"
+        name="flastname"
+        placeholder="Enter your lastname"
+        id="lastname"
+        required 
+         style="height: 25px; width: 200px;" size="20"></td>
+</tr>
+<tr>
+	<td><abbr title="Enter your nirmauni id">Email-id:</abbr></td><td> <input style="height: 25px; width: 200px;" placeholder="Enter your college email-id" type="email" id="email"
+       pattern=".+@nirmauni.ac.in" size="30" required name="femail">
+</td>
+</tr>
+<tr>
+
+<td>
+	<abbr title="Password should contain 1 uppercase 1 lowercase 1 number and 1 special chararter">
+Faculty Password: </td><td></abbr> <input type="password" name="fpassword" value="" 
+ style="height: 25px; width: 200px;" size="20" required></td></abbr></tr>
+<tr>
+<td>
+Confirm Password: </td><td> <input type="password" name="fcnfpassword" value="" 
+style="height: 25px; width: 200px;" size="20" required></td></tr>
+
+<tr>
+<td>Department:</td><td>
+<select name="department">
+	<option>Select</option>
+<option value="CSE">CE</option>
+<option value="EC">EC</option>
+<option value="IT">IT</option>
+<option value="IC">IC</option>
+<option value="CHE">CHE</option>
+<option value="CI">CL</option>
+<option value="EE">EE</option>
+<option value="ME">ME</option>
+</select></td></tr> 
+
+<tr><td>
+<button id="register" type="submit" value="Register" name="Register" onclick="return fvalidateform()">Register</button></td><td>
+<input  id="reset" type="reset" name="freset" value="Reset">
+</td></tr></table>
+
+</form>
+</div>
+
+</body>
+</html>

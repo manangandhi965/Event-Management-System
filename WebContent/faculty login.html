@@ -1,0 +1,129 @@
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+
+	<title>
+		Faculty Login
+	</title>
+	<style type="text/css">
+		#topnav {
+  overflow: hidden;
+  background-color: #333;
+  position: fixed;
+  width: 100%;
+}
+#topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+#topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+		table{
+			margin-top: 30px;
+			background: transparent;
+			font-size: 20;
+			text-align: auto;
+			border-width: 4;
+			border-style: solid black;
+			border-color: black;
+			border-radius: 13px;
+		}
+		#login{
+			background: #F9E79F;
+			border-radius: 5px;
+			height: 30px;
+			width: 110px;
+			font-weight: bold;
+		}
+		#login:hover{
+			background-color: #DC7633;
+			font-weight: bold;  
+		}
+		body{
+			background-image: url("event.jpg");
+			background-size: auto;
+			background-repeat: no-repeat;
+		}
+		input{
+			border-radius: 4px;
+		}
+		abbr[title] {
+  border-bottom: none !important;
+  cursor: inherit !important;
+  text-decoration: none !important;
+}
+		#reset{
+			background: #F9E79F;
+			border-radius: 5px;
+			height: 30px;
+			width: 110px;
+			font-weight: bold;
+		}
+		#reset:hover{
+			background-color: #DC7633;
+			font-weight: bold;  
+		}
+		#signin{
+			background: #F9E79F;
+			border-radius: 5px;
+			height: 30px;
+			width: 110px;
+			font-weight: bold;
+		}
+		#signin:hover{
+			background-color: #DC7633;
+			font-weight: bold;  
+		}
+	</style>
+</head>
+<body>
+<div id="topnav">
+  <a id="active" href="index.html">Home</a>
+  <a href="aboutus.html">About Us</a>
+  <a href="student login.html">Student Login</a>
+  <a href="student register.html">Student Signup</a>
+  <a href="faculty login.html">Faculty Login</a>
+  <a href="faculty register.html">Faculty Signup</a>
+</div>
+<br>  
+</table>
+<div id="f-div">
+<form name="faculty" method="post" action="facultylogin">
+<table  cellspacing=5 align="center">
+	<caption><h2>Faculty Login</h2></caption>
+<tr>
+	<td>Faculty Username:</td><td> <input style="height: 25px; width: 200px;" type="email" id="email"
+       pattern=".+@nirmauni.ac.in" size="30" required name="funame" placeholder="Enter your registered Email-id">
+</td>
+</tr>
+<tr>
+
+<td>
+Password: </td><td> <input type="password" name="fpassword" value="" 
+ style="height: 25px; width: 200px;" size="20" required="required"></td></abbr></tr>
+
+<tr>
+	<td>
+<input id="login" type="submit" value="Login" name="flogin"></td><td>
+<input  id="reset" type="reset" name="freset" value="Reset">
+</td></tr>
+<tr><td></td></tr>
+<tr><td></td></tr>
+<tr>
+	<td>New User ? </td>
+	<td> <a href="faculty register.html"><button name="fsignin" id="signin">SignUp</button></td></a></td>
+</tr>
+</table>
+
+</form>
+</div>
+	
+</body>
+</html>
